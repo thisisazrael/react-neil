@@ -1,0 +1,4 @@
+To list all of the templates available for dotnet, use this command:  dotnet -l
+
+Create a solution file.  The name of the solution is the folder name where you are currently in.
+dotnet new sln 

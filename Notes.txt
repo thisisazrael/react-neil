@@ -2,3 +2,14 @@ To list all of the templates available for dotnet, use this command:  dotnet -l
 
 Create a solution file.  The name of the solution is the folder name where you are currently in.
 dotnet new sln 
+
+Extensions:
+* C# by Microsoft
+* C# Extensions by JosKreativ
+* Auto Rename Tag by Jun Han
+* Material Icon Theme by Philipp Kief
+* NuGet Gallery by pcislo
+* SQLite by alexcvzz
+
+To hide unneeded folders:
+Click File > Preferences > Settings

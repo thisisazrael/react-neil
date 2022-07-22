@@ -13,3 +13,6 @@ Extensions:
 
 To hide unneeded folders:
 Click File > Preferences > Settings
+
+* Dotnet ef command line tool is needed and should be the same version of the entity framework installed
+dotnet tool install --global dotnet-ef --version 6.0.7

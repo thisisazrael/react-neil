@@ -19,3 +19,12 @@ dotnet tool install --global dotnet-ef --version 6.0.7
 
 How to install react
 npx create-react-app client --template typescript --use-npm
+
+How to add class to an html
+className instead of class is to be used as 'class' is a reserved word for javascript
+
+How to add in-line style
+<h1 style={{color: 'red'}}>Re-Store</h1>
+
+If this error is encountered
+ERROR in [eslint] Plugin "react" was conflicted between "package.json » eslint-config-react-app

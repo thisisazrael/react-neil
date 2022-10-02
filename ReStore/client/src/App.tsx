@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
+import { Product } from "./product";
 
 function App() {
   // Use state
-  const [products, setProducts] = useState([
-    { name: 'product1', price: 100.00 },
-    { name: 'product2', price: 200.00 }
-  ]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   // Adding the empty array dependency here is important as this will prevent
   // the infinite call to api.  What will happen when there is no dependency is
@@ -13,21 +11,28 @@ function App() {
   // useEffect hook will trigger again if there is no dependency
   useEffect(() => {
     fetch('http://localhost:5000/api/products')
-    .then(response => response.json())
-    .then(data => setProducts(data))
+      .then(response => response.json())
+      .then(data => setProducts(data))
   }, [])
 
   function addProduct() {
     setProducts(prevState => [...prevState,
-    { name: 'product' + (prevState.length + 1), price: (prevState.length * 100) + 100 }])
+    {
+      id: prevState.length + 101,
+      name: 'product' + (prevState.length + 1),
+      price: (prevState.length * 100) + 100,
+      brand: 'some brand',
+      description: 'some description',
+      pictureUrl: 'http://picsum.photos/200'
+    }])
   }
 
   return (
     <div>
       <h1>Re-Store</h1>
       <ul>
-        {products.map((item, index) => (
-          <li key={index}>{item.name} = {item.price}</li>
+        {products.map(product => (
+          <li key={product.id}>{product.name} = {product.price}</li>
         ))}
       </ul>
       <button onClick={addProduct}>Add Product</button>

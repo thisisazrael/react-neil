@@ -1,3 +1,6 @@
+import { Avatar, Button, List, ListItemAvatar, ListItemText } from "@mui/material";
+import ListItem from "@mui/material/ListItem";
+
 import { Product } from "../../app/models/product"
 
 interface Props {
@@ -13,12 +16,19 @@ export default function Catalog({products, addProduct}: Props) {
         // <Fragment> is use when you wanted to wrap the child elements as this
         // fragment wont be rendered in DOM.
         <>
-            <ul>
+            <List>
                 {products.map(product => (
-                    <li key={product.id}>{product.name} = {product.price}</li>
+                    <ListItem key={product.id}>
+                        <ListItemAvatar>
+                            <Avatar src={product.pictureUrl} />
+                        </ListItemAvatar>
+                        <ListItemText>
+                            {product.name} - {product.price}
+                        </ListItemText>
+                    </ListItem>
                 ))}
-            </ul>
-            <button onClick={addProduct}>Add Product</button>
+            </List>
+            <Button variant="contained" onClick={addProduct}>Add Product</Button>
         </>
     )
 }

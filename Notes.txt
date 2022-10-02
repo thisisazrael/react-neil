@@ -28,3 +28,10 @@ How to add in-line style
 
 If this error is encountered
 ERROR in [eslint] Plugin "react" was conflicted between "package.json » eslint-config-react-app
+
+!!!Passing an empty array as dependency in useEffect will make this run only once and that is very important
+useEffect(() => {
+    fetch('http://localhost:5000/api/products')
+    .then(response => response.json())
+    .then(data => setProducts(data))
+  }, [])

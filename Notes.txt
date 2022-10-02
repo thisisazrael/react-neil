@@ -35,3 +35,8 @@ useEffect(() => {
     .then(response => response.json())
     .then(data => setProducts(data))
   }, [])
+
+  Is there a recommended way to structure React projects?
+  > None.  React is a very unopinionated library hence there's no opinion on how you put files into folders.
+  That said there are few common approaches popular in the ecosystem you may want to consider.
+  https://reactjs.org/docs/faq-structure.html

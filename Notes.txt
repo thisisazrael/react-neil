@@ -40,3 +40,12 @@ useEffect(() => {
   > None.  React is a very unopinionated library hence there's no opinion on how you put files into folders.
   That said there are few common approaches popular in the ecosystem you may want to consider.
   https://reactjs.org/docs/faq-structure.html
+
+  !!!You can use <Fragment></Fragment> or empty tag <> to use as a wrapper as React component
+  always need 1 parent for its child elements.  A <div> can solve as a wrapper, but if you 
+  want something not be rendered in DOM, use empty tag
+-----------------
+Destructuring
+// {products, addProduct} --> this is called destructuring so you don't need to use props like this before
+// export default function Catalog(props: Props) {... and do something like props.products.map
+export default function Catalog({products, addProduct}: Props) {

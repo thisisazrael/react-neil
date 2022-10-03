@@ -55,6 +55,9 @@ https://mui.com/material-ui/getting-started/installation/
 this project uses material v5.x
 To install material ui:  npm install @mui/material @emotion/react @emotion/styled
 
+<CssBaseline /> - this is needed to reset the styles.  Sample that your app has padding by default, this will reset it.
+You may put it on app.tsx
+
 Material UI uses Roboto font, add this to your index.html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 

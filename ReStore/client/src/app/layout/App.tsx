@@ -3,10 +3,11 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import { Typography } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
 import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
+import Header from './Header';
 
 function App() {
   // Use state
@@ -36,8 +37,11 @@ function App() {
 
   return (
     <>
-      <Typography variant="h1">Re-Store</Typography>
-      <Catalog products={products} addProduct={addProduct} />
+      <CssBaseline />
+      <Header />
+      <Container>
+        <Catalog products={products} addProduct={addProduct} />
+      </Container>
     </>
   );
 }

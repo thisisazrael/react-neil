@@ -66,3 +66,5 @@ npm install @mui/icons-material
 
 If you need to override something for the material component.  Visit the documentation and search for the component api.
 Focus on the propertis (e.g. appbar has this sx object for overriding styles)
+
+ sx has access to theme's variables. e.g. color:  'primary.main'

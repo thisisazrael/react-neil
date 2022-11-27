@@ -70,3 +70,30 @@ Focus on the propertis (e.g. appbar has this sx object for overriding styles)
  sx has access to theme's variables. e.g. color:  'primary.main'
  ------------------------
  Go to material ui documentation and click Theming (https://mui.com/material-ui/customization/theming/)
+ -----
+ Setting up React Router
+ Note!! React router dom does not come with type definition file so that's why we're getting the type definition from the community (i.e. @types/react-router-dom@5.3.2)
+ npm install react-router-dom@5.3.0 @types/react-router-dom@5.3.2 (be specific with this version)
+
+To use this, on the highest level which is the feature/index.tsx.  Wrap the <App /> component inside <BrowserRouter> component.  See below:
+<React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+
+  On the App.tsx where it was supposed to load pages.  You can have something like below to setup router.
+  !!!Note: Router matches all the path to load.  If you don't add 'exact' attribute, it will always load the homepage as the path will always match the '/' forward slash
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+      <Container>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/catalog' component={Catalog} />
+        <Route path='/catalog/:id' component={ProductDetails} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/contact' component={ContactPage} />
+      </Container>
+    </ThemeProvider>
+  );
